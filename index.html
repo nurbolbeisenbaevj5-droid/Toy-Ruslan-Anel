@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Руслан мен Анель  — Үйлену тойы</title>
+
+    <!-- Әдемі каллиграфиялық шрифт -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            min-height: 100vh;
+            font-family: "Playfair Display", serif;
+            background: #f5efe7;
+            color: #2d2926;
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 40px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .glass {
+            width: 100%;
+            max-width: 700px;
+            padding: 45px 30px;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.30),
+                    rgba(255,255,255,0.30)
+                ),
+                url("./images/ring.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            border-radius: 30px;
+            overflow: hidden;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+        }
+
+        /* Жоғарғы мәтін */
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: -15px;
+        }
+
+        .invite {
+            font-family: "Marck Script", cursive;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .names {
+            font-family: "Marck Script", cursive;
+            font-size: 58px;
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .names span {
+            display: block;
+        }
+
+        .heart {
+            font-size: 35px;
+            margin: 5px 0 20px;
+        }
+
+        /* Негізгі мәтін */
+
+        .text {
+            font-size: 19px;
+            line-height: 1.8;
+            margin: 20px auto 35px;
+            max-width: 600px;
+        }
+
+        /* Ақпарат */
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            padding: 18px 10px;
+            background: rgba(255,255,255,0.55);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .info-box h3 {
+            font-family: "Marck Script", cursive;
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .info-box p {
+            font-size: 19px;
+        }
+
+        /* Таймер */
+
+        .timer-title {
+            font-family: "Marck Script", cursive;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        #timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .time-box {
+            background: rgba(30,30,30,0.82);
+            color: white;
+            padding: 15px 5px;
+            border-radius: 18px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .time-box small {
+            font-size: 13px;
+        }
+
+        /* Жауап батырмалары */
+.reply {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.reply a {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    padding: 16px 20px;
+
+    text-decoration: none;
+    color: white;
+
+    border-radius: 30px;
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.reply a:hover {
+    transform: scale(1.08);
+}
+
+.yes {
+    background: #54cfa9;
+}
+
+.no {
+    background: #e56b6f;
+}
+
+        /* 2GIS */
+
+        .mapBtn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            text-decoration: none;
+            transition: 0.3s;
+
+        }
+
+        .mapBtn:hover {
+            transform: scale(1.03);
+        }
+
+        /* Той иелері */
+
+        .owners {
+            margin-top: 35px;
+        }
+
+        .owners-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .owners-names {
+            font-family: "Marck Script", cursive;
+            font-size: 38px;
+        }
+
+        /* Телефонға */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 20px 10px;
+            }
+
+            .glass {
+                padding: 35px 18px;
+                border-radius: 25px;
+            }
+
+            .names {
+                font-size: 48px;
+            }
+
+            .invite {
+                font-size: 29px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .text {
+                font-size: 17px;
+            }
+
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            #timer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .owners-names {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <main class="glass">
+
+        <!-- Шақыру -->
+
+        <div class="invite">
+            Тойға шақыру
+        </div>
+
+        <div class="names">
+            <span>Ринат</span>
+            <span>&</span>
+            <span>Анель</span>
+        </div>
+
+        <div class="subtitle">
+            Құрметті ағайын-туыс, құда-жекжат,
+            дос-жаран!
+        </div>
+
+        <div class="text">
+            Сіздерді өміріміздің ең бақытты
+            күнінде бізбен бірге болуға шақырамыз.
+            Қуанышымыздың қадірлі қонағы болыңыздар!
+        </div>
+
+
+        <!-- Ақпарат -->
+
+        <div class="invitation-image">
+    <img src="images/Millennium chislo2.png" 
+    alt="Шақыру"
+         style="width: 100% !important; max-width: 800px !important; height: auto !important; display: block; margin: 0 auto;">
+        </div>
+
+        <!-- Таймер -->
+
+        <div class="timer-title">
+            Тойымызға дейін
+        </div>
+
+        <div id="timer">
+
+            <div class="time-box">
+                <span id="days">0</span>
+                <small>Күн</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">0</span>
+                <small>Сағат</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <small>Минут</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <small>Секунд</small>
+            </div>
+
+        </div>
+
+        <!-- Жауап -->
+
+       <div class="reply">
+
+    <a href="https://wa.me/77770257515?text=Келемін"
+       target="_blank"
+       class="yes">
+        Келемін
+    </a>
+
+    <a href="https://wa.me/77770257515?text=Келмеймін"
+       target="_blank"
+       class="no">
+        Келмеймін
+    </a>
+
+</div>
+
+       <div class="social-links">
+
+    <!-- 2GIS -->
+    <a class="mapBtn"
+       href="https://2gis.kz/almaty/geo/7000000103034478"
+       target="_blank">
+        <img src="images/2GIS 1.jpg" alt="2GIS" width="170">
+    </a>
+
+</div>
+
+        <div class="owners">
+
+            <div class="owners-title">
+                Той иелері
+            </div>
+
+            <div class="owners-names">
+                Самат пен Фатима
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    // Тойдың күні
+    const weddingDate = new Date("2026-10-04T18:00:00");
+
+    function updateTimer() {
+
+        const now = new Date();
+        const difference = weddingDate - now;
+
+        if (difference <= 0) {
+            document.getElementById("days").textContent = 0;
+            document.getElementById("hours").textContent = 0;
+            document.getElementById("minutes").textContent = 0;
+            document.getElementById("seconds").textContent = 0;
+            return;
+        }
+
+        const days = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        const hours = Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+
+        const minutes = Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+
+        const seconds = Math.floor(
+            (difference / 1000) % 60
+        );
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateTimer();
+
+    setInterval(updateTimer, 1000);
+
+</script>
+
+<audio id="music" loop autoplay>
+    <source src="music/Love story-Indila Piano.mp4" type="audio/mp4">
+</audio>
+
+<div style="position: fixed; bottom: 100px; right: 100px; z-index: 999999;">
+<button id="musicBtn">▶️</button>
+</div>
+
+<script>
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = "⏸️";
+    } else {
+        music.pause();
+        musicBtn.textContent = "▶️";
+    }
+});
+
+// Сайт ашылғанда автоматты түрде қосуға тырысады
+window.addEventListener("load", () => {
+    music.play()
+        .then(() => {
+            musicBtn.textContent = "⏸️";
+        })
+        .catch(() => {
+            // Браузер автоматты музыканы бұғаттаса,
+            // ▶️ батырмасын басып қосуға болады.
+        });
+});
+</script>
+
+<script>
+const yesBtn = document.querySelector(".yes");
+const noBtn = document.querySelector(".no");
+
+yesBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    alert("🥰 Келетініңізге қуаныштымыз!");
+
+    window.open(
+        "https://wa.me/77770257515?text=" +
+        encodeURIComponent("🥰 Келемін!"),
+        "_blank"
+    );
+});
+
+noBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    alert("❤️ Жауабыңызға рақмет!");
+
+    window.open(
+        "https://wa.me/77770257515?text=" +
+        encodeURIComponent("❤️ Келмеймін!"),
+        "_blank"
+    );
+});
+</script>
+
+</body>
+</html>
