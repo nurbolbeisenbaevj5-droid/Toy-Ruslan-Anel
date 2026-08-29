@@ -10,6 +10,3 @@ musicBtn.addEventListener("click", () => {
         musicBtn.textContent = "▶️";
     }
 });
-
-const yesBtn = document.querySelector(".yes");
-const noBtn = document.querySelector(".no");

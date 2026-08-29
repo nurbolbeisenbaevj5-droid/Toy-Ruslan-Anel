@@ -1,5 +1,57 @@
 <!DOCTYPE html>
 <html lang="kk">
+
+<style>
+/* Ашылу анимациясы */
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: openingFade 4s ease forwards;
+}
+
+#opening h1 {
+    font-size: 42px;
+    margin: 0;
+    opacity: 0;
+    animation: textShow 1.5s ease 0.5s forwards;
+}
+
+#opening p {
+    font-size: 20px;
+    margin-top: 15px;
+    opacity: 0;
+    animation: textShow 1.5s ease 1s forwards;
+}
+
+@keyframes textShow {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes openingFade {
+    0%, 75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -269,6 +321,11 @@
 
 <body>
 
+    <div id="opening">
+    <h1>Руслан & Анель</h1>
+    <p>Үйлену тойына шақыру</p>
+</div>
+
 <div class="page">
 
     <main class="glass">
@@ -498,6 +555,25 @@ noBtn.addEventListener("click", function(e) {
         "_blank"
     );
 });
+</script>
+
+<script>
+let autoScroll = 0;
+
+function autoMove() {
+    const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    autoScroll += 1;
+
+    if (autoScroll >= maxScroll) {
+        autoScroll = 0;
+    }
+
+    window.scrollTo(0, autoScroll);
+}
+
+setInterval(autoMove, 40);
 </script>
 
 </body>
